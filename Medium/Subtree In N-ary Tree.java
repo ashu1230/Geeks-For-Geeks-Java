@@ -21,3 +21,38 @@ You don't need to read input or print anything. Your task is to complete the fun
   
   
   Quetion link:- https://practice.geeksforgeeks.org/problems/079dee7e7db7a784ed73f604e3cf1712432edf79/1
+
+
+#Solution Java..
+  class Solution {
+    private static Map<String, Integer> subtreeCounts;
+
+    public int duplicateSubtreeNaryTree(Node root){
+        subtreeCounts = new HashMap<>();
+        traverse(root);
+        int count = 0;
+        for (int freq : subtreeCounts.values()) {
+            if (freq > 1) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private static String traverse(Node root) {
+        if (root == null) {
+            return "#";
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append(root.data);
+        sb.append(":");
+        for (Node child : root.children) {
+            sb.append(traverse(child));
+            sb.append(",");
+        }
+        String subtree = sb.toString();
+        subtreeCounts.put(subtree, subtreeCounts.getOrDefault(subtree, 0) + 1);
+        return subtree;
+    }
+}
+
