@@ -35,7 +35,7 @@ Constraints:
 
 #Solution...
   //User function Template for Java
-
+```java
 class Solution{
 	int maxSweetness(int [] sweetness, int N, int K) {
 	    // Write your code here.
@@ -64,4 +64,4 @@ class Solution{
 	    }
 	    return ans;
 	}
-}
+}```
