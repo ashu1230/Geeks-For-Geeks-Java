@@ -39,4 +39,7 @@ Constraints:
 1 <= n <= 10^5
 0 <= arr[i] <=1
   
+  #SOULTION.......
+  
+  
   
