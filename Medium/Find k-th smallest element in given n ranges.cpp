@@ -42,4 +42,47 @@ Constraints:
 
 #SOLUTION......
   
-  
+  class Solution{
+    public:
+    vector<int>kthSmallestNum(int n, vector<vector<int>>&range, int q, vector<int>queries){
+        sort(range.begin(),range.end()); 
+        int end = 0; 
+        vector<vector<int>> r;
+        // merge the overlapping interval
+        while(end < n){ 
+            int start = end;
+            int maxi = range[end][1];
+            while(end < n and maxi >= range[end][0]){
+                maxi = max(maxi, range[end][1]);
+                end++;
+            }
+            r.push_back({range[start][0], maxi});
+        } 
+        
+        vector<int> v(r.size());
+        int i = 0;
+        // prefix sum for number of element present in each interval to further processing
+        for(auto x: r){
+            int size = x[1] - x[0] + 1;
+            v[i] = ((i-1 >= 0)?v[i-1]+size:size);
+            i++;
+        } 
+        
+        vector<int> ans;
+        for(auto x: queries){
+            int ind = lower_bound(v.begin(),v.end(),x) - v.begin(); 
+            // if x is greater than the number of element present in the interval
+            if(ind >= v.size()){
+                ans.push_back(-1);
+            }else{
+                // count the remaining element and add to the start point of the interval
+                int val = ((ind-1 >= 0)?v[ind-1]:0);  
+                int rem = abs(x - val);
+                int ele = r[ind][0]+rem-1;
+                ans.push_back(ele);
+            }
+        }
+        return ans;
+    } 
+};
+
