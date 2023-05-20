@@ -38,7 +38,31 @@ Constraints:
   
 
 
-
+class Solution {
+    static boolean isStraightHand(int N, int groupsize, int hand[]) {
+        // code here
+        Arrays.sort(hand);
+        HashMap<Integer,Integer>map = new HashMap<>();
+        for(int i:hand)
+        map.put(i,map.getOrDefault(i,0) + 1);
+        for(int i = 0; i < hand.length; i++) {
+            if (map.get(hand[i]) > 0) {
+                int term = (hand[i]);
+                int j = 0;
+                while (j < groupsize) {
+                    if(map.get(term) == null || map.get(term) <= 0)
+                    return false;
+                    else {
+                        map.put(term,map.get(term) - 1);
+                        term++;
+                        j++;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+}
 
 
 
