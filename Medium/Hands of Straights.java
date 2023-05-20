@@ -29,3 +29,16 @@ Constraints:
 1 ≤ N ≤ 10^5
 1 ≤ groupSize ≤ N
 0 ≤ handi ≤ 10^9
+
+
+
+
+
+#SOULTION.......
+  
+
+
+
+
+
+
