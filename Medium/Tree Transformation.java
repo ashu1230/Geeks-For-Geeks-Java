@@ -68,3 +68,24 @@ Constraints:
 1 ≤ N ≤ 10^5
 0 ≤ p[i] < N
 p[0] = -1, 0 is the root node.
+
+            
+            
+  #SOLUTION......
+            class Solution {
+    public static int solve(int N, int[] p) {
+        // code here
+        int [] g = new int [N + 1];
+        for (int i = 1; i < N; i++) {
+            g[p[i]]++;
+            g[i]++;
+        }
+        int cout = 0;
+        for (int i = 0; i < N; i++) {
+            if (g[i] == 1)
+            cout++;
+        }
+        return Math.max(N - cout - 1, 0);
+    }
+}
+        
