@@ -44,3 +44,19 @@ Constraints:
    n == chairs.length == passengers.length
    1 <= n <= 10^5
    1 <= chairs[i], passengers[j] <= 100
+
+      
+      #SOLUTION.......
+      class Solution {
+    public static int findMoves(int n, int[] chairs, int[] passengers) {
+        // code here
+        Arrays.sort(chairs);
+        Arrays.sort(passengers);
+        int move = 0;
+        for (int i=0; i<n; i++) {
+            move += Math.abs(chairs[i]-passengers[i]);
+        }
+        return move;
+    }
+}
+        
