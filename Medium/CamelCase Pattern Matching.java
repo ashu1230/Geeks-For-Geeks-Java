@@ -41,3 +41,7 @@ Constraints:
 1<=|S|<=100
 1<=|Pattern|<=|S|<=100
 S is the longest word in Dictionary.
+
+  
+  #SOLUTION......
+  
