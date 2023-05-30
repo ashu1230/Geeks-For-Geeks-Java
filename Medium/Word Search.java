@@ -31,3 +31,9 @@ Expected Space Compelxity: O(L), L is length of word.
 Constraints:
 1 ≤ N, M ≤ 100
 1 ≤ L ≤ N*M
+
+
+#SOLUTION....
+  
+
+
