@@ -35,3 +35,5 @@ Constraints:
 1 <= N1, N2, N3 <= 10^5
 1 <= S1[i], S2[i], S3[i] <= 10^3
 The sum, N1+N2+N3 doesn't exceed 10^6
+  
+  #SOLUTION..........
