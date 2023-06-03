@@ -37,3 +37,8 @@ Constraints:
 The sum, N1+N2+N3 doesn't exceed 10^6
   
   #SOLUTION..........
+
+  
+  
+  
+  
