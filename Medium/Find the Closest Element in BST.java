@@ -43,3 +43,27 @@ Expected Auxiliary Space: O(Height of the BST).
 Constraints:
 1 <= Number of nodes <= 10^5
 1 <=data<= 10^5
+
+
+
+#SOLUTION....
+        class Solution
+
+{
+    public static void fun(ArrayList<Integer> list, Node root){
+        if(root == null) return ;
+        fun(list, root.left);
+        list.add(root.data);
+        fun(list, root.right);
+    }
+    
+    static int minDiff(Node  root, int K) 
+    {   
+        ArrayList<Integer> list = new ArrayList<>();
+        fun(list, root);
+        int closestElem = (int)1e9;
+        for(Integer elem: list) closestElem = Math.min(closestElem, Math.abs(elem-K));
+
+        return closestElem;
+    } 
+}
