@@ -3,7 +3,10 @@
 #SOLUTION.....
 
 
-public int[] leastPrimeFactor(int n)
+//User function Template for Java
+class Solution
+{
+    public int[] leastPrimeFactor(int n)
     {
         // code here
         int ans[] = new int[n+1];
@@ -39,3 +42,4 @@ public int[] leastPrimeFactor(int n)
         return true;
     }
  
+}
