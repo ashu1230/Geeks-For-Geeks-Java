@@ -33,3 +33,7 @@ Expected Auxiliary Space: O(N)
 Constraints:
 1 ≤ N ≤ 1000
 1 ≤ Ai ≤ 10^5
+
+#SOLUTION.......
+  
+  
